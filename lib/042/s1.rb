@@ -17,6 +17,7 @@ end
 
 
 if __FILE__ == $PROGRAM_NAME
-  words = File.readlines("data.txt").first.split(",").map { |wrd| wrd[/\w+/].downcase }
+  file = ARGV[0] || "data.txt"
+  words = File.readlines(file).first.split(",").map { |wrd| wrd[/\w+/].downcase }
   puts words.select { |wrd| tri_num?(score(wrd)) }.count
 end
