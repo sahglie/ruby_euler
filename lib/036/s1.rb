@@ -1,8 +1,7 @@
 
 def b2_b10_palindromes(upperbound)
   (1...upperbound).select do |n|
-    b10 = n.to_s.split("")
-    b2 = n.to_s(2).split("")
+    b10, b2 = n.to_s, n.to_s(2)
     (b10 == b10.reverse) && (b2 == b2.reverse)
   end
 end
