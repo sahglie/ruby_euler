@@ -6,10 +6,10 @@
 # use data_L.txt
 #
 #
-# time ruby s1.rb data_l.txt
+# time ruby s1.rb data_L.txt
 # => 4.551 secs (avg on 4 runs)
 #
-# time ruby s2.rb data_l.txt
+# time ruby s2.rb data_L.txt
 # => 2.373 secs (avg on 4 runs)
 #
 class TriEnum
