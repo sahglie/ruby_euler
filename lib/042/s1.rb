@@ -1,6 +1,6 @@
 
 def score(word)
-  word.each_char.inject(0) { |score, c| score += (c.ord - 96) }
+  word.each_char.inject(0) { |score, c| score += (c.ord - 64) }
 end
 
 def tri_num?(n)
@@ -18,6 +18,6 @@ end
 
 if __FILE__ == $PROGRAM_NAME
   file = ARGV[0] || "data.txt"
-  words = File.readlines(file).first.split(",").map { |wrd| wrd[/\w+/].downcase }
+  words = File.readlines(file).first.split(",").map { |wrd| wrd[/\w+/] }
   puts words.select { |wrd| tri_num?(score(wrd)) }.count
 end

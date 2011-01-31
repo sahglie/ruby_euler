@@ -7,10 +7,10 @@
 #
 #
 # time ruby s1.rb data_L.txt
-# => 4.551 secs (avg on 4 runs)
+# => 4.097 secs (avg on 4 runs)
 #
 # time ruby s2.rb data_L.txt
-# => 2.373 secs (avg on 4 runs)
+# => 2.035 secs (avg on 4 runs)
 #
 class TriEnum
   def initialize
@@ -44,13 +44,13 @@ class TriEnum
 end
 
 def score(word)
-  word.each_char.inject(0) { |score, c| score + (c.ord - 96) }
+  word.each_char.inject(0) { |score, c| score + (c.ord - 64) }
 end
 
 
 if __FILE__ == $PROGRAM_NAME
   file = ARGV[0] || "data_L.txt"
-  words = File.readlines(file).first.split(",").map { |wrd| wrd[/\w+/].downcase }
+  words = File.readlines(file).first.split(",").map { |wrd| wrd[/\w+/] }
   e = TriEnum.new
   puts words.select { |wrd| e.include?(score(wrd)) }.count
 end
